@@ -24,3 +24,5 @@ This Application will showcase the following features of the Camera APIs
 **Tablet** 
  * Android
  * iPad
+ 
+Certified4KonyCommunity7.1.1 
