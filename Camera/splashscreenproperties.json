@@ -1,0 +1,80 @@
+{
+    "splashScreen": {
+        "mobile": {
+            "iphone": {
+                "splashImage": "splash_320x480.png",
+                "showLoadingIndicator": true,
+                "videoInterruptible": false,
+                "animationDuration": 10
+            },
+            "android": {
+                "splashImage": "splash.9.png",
+                "showLoadingIndicator": true,
+                "videoInterruptible": false,
+                "animationDuration": 10,
+                "backgroundColor": "b5d9f5"
+            },
+            "winphone8": {
+                "showLoadingIndicator": false
+            },
+            "spa": {
+                "backgroundColor": "b5d9f5"
+            },
+            "spaip": {
+                "splashImage": "splash_320x480.png"
+            },
+            "spaan": {
+                "splashImage": "splash.9.png"
+            },
+            "spawinphone8": {},
+            "splashImage": "splash_320x480.png"
+        },
+        "tablet": {
+            "ipad": {
+                "landscape": {
+                    "videoInterruptible": false,
+                    "animationDuration": 10
+                },
+                "splashImage": "splash_768x1024.png",
+                "showLoadingIndicator": true,
+                "videoInterruptible": false,
+                "animationDuration": 10
+            },
+            "android": {
+                "splashImage": "splash_720x1280.png",
+                "showLoadingIndicator": true,
+                "videoInterruptible": false,
+                "animationDuration": 10,
+                "backgroundColor": "b5d9f5"
+            },
+            "windows8": {
+                "showLoadingIndicator": false,
+                "foregroundColor": "ffffff",
+                "backgroundColor": "b5d9f5"
+            },
+            "spa": {
+                "backgroundColor": "b5d9f5"
+            },
+            "spaipad": {
+                "splashImage": "splash_768x1024.png"
+            },
+            "spaandroidtablet": {
+                "splashImage": "splash_720x1280.png"
+            },
+            "spawindowstablet": {},
+            "splashImage": "splash_720x1280.png",
+            "windows10": {
+                "foregroundColor": "ffffff",
+                "backgroundColor": "b5d9f5"
+            }
+        },
+        "desktop": {
+            "desktopweb": {
+                "splashImage": "splash_1024x768.png",
+                "backgroundColor": "b5d9f5"
+            },
+            "kiosk": {},
+            "splashImage": "splash_320x480.png"
+        }
+    }
+}

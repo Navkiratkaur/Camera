@@ -1,106 +1,108 @@
-//Form JS File
-function frmCamOptions_btnBasicCam_onClick_seq0(eventobject) {
-    frmCamBasic.show();
-};
-
-function frmCamOptions_btnOverlay_onClick_seq0(eventobject) {
-    frmCamOverlay.show();
-};
-
-function frmCamOptions_btnAccMode_onClick_seq0(eventobject) {
-    frmCamAccessMode.show();
-};
-
 function addWidgetsfrmCamOptions() {
+    var hbxHeaderWindows = new kony.ui.Box({
+        "id": "hbxHeaderWindows",
+        "isVisible": true,
+        "orientation": constants.BOX_LAYOUT_HORIZONTAL,
+        "position": constants.BOX_POSITION_AS_NORMAL
+    }, {
+        "containerWeight": 100,
+        "layoutAlignment": constants.BOX_LAYOUT_ALIGN_FROM_LEFT,
+        "layoutType": constants.CONTAINER_LAYOUT_BOX,
+        "margin": [0, 0, 0, 0],
+        "marginInPixel": false,
+        "padding": [0, 0, 0, 0],
+        "paddingInPixel": false,
+        "percent": true,
+        "vExpand": false,
+        "widgetAlignment": constants.WIDGET_ALIGN_TOP_LEFT
+    }, {});
+    hbxHeaderWindows.add();
     var btnBasicCam = new kony.ui.Button({
+        "focusSkin": "sknBtnFocusSampleApp",
         "id": "btnBasicCam",
         "isVisible": true,
-        "text": "Basic Camera",
+        "onClick": p2kwiet1296439488837_btnBasicCam_onClick_seq0,
         "skin": "sknBtnNormalSampleApp",
-        "focusSkin": "sknBtnFocusSampleApp",
-        "onClick": frmCamOptions_btnBasicCam_onClick_seq0
+        "text": "Basic Camera"
     }, {
-        "widgetAlignment": constants.WIDGET_ALIGN_CENTER,
-        "vExpand": false,
+        "containerWeight": 100,
+        "contentAlignment": constants.CONTENT_ALIGN_CENTER,
+        "displayText": true,
         "hExpand": true,
         "margin": [4, 6, 4, 2],
-        "padding": [1, 4, 1, 4],
-        "contentAlignment": constants.CONTENT_ALIGN_CENTER,
-        "displayText": true,
         "marginInPixel": false,
+        "padding": [1, 4, 1, 4],
         "paddingInPixel": false,
-        "containerWeight": 6
+        "vExpand": false,
+        "widgetAlignment": constants.WIDGET_ALIGN_CENTER
     }, {});
     var btnOverlay = new kony.ui.Button({
+        "focusSkin": "sknBtnFocusSampleApp",
         "id": "btnOverlay",
         "isVisible": true,
-        "text": "Camera with form overlay",
+        "onClick": p2kwiet1296439488837_btnOverlay_onClick_seq0,
         "skin": "sknBtnNormalSampleApp",
-        "focusSkin": "sknBtnFocusSampleApp",
-        "onClick": frmCamOptions_btnOverlay_onClick_seq0
+        "text": "Camera with form overlay"
     }, {
-        "widgetAlignment": constants.WIDGET_ALIGN_CENTER,
-        "vExpand": false,
-        "hExpand": true,
-        "margin": [4, 2, 4, 2],
-        "padding": [1, 4, 1, 4],
+        "containerWeight": 100,
         "contentAlignment": constants.CONTENT_ALIGN_CENTER,
         "displayText": true,
+        "hExpand": true,
+        "margin": [4, 2, 4, 2],
         "marginInPixel": false,
+        "padding": [1, 4, 1, 4],
         "paddingInPixel": false,
-        "containerWeight": 6
+        "vExpand": false,
+        "widgetAlignment": constants.WIDGET_ALIGN_CENTER
     }, {});
     var btnAccMode = new kony.ui.Button({
+        "focusSkin": "sknBtnFocusSampleApp",
         "id": "btnAccMode",
         "isVisible": true,
-        "text": "Camera access modes",
+        "onClick": p2kwiet1296439488837_btnAccMode_onClick_seq0,
         "skin": "sknBtnNormalSampleApp",
-        "focusSkin": "sknBtnFocusSampleApp",
-        "onClick": frmCamOptions_btnAccMode_onClick_seq0
+        "text": "Camera access modes"
     }, {
-        "widgetAlignment": constants.WIDGET_ALIGN_CENTER,
-        "vExpand": false,
-        "hExpand": true,
-        "margin": [4, 2, 4, 2],
-        "padding": [1, 4, 1, 4],
+        "containerWeight": 100,
         "contentAlignment": constants.CONTENT_ALIGN_CENTER,
         "displayText": true,
+        "hExpand": true,
+        "margin": [4, 2, 4, 2],
         "marginInPixel": false,
+        "padding": [1, 4, 1, 4],
         "paddingInPixel": false,
-        "containerWeight": 6
+        "vExpand": false,
+        "widgetAlignment": constants.WIDGET_ALIGN_CENTER
     }, {});
-    frmCamOptions.add(
-    btnBasicCam, btnOverlay, btnAccMode);
+    frmCamOptions.add(hbxHeaderWindows, btnBasicCam, btnOverlay, btnAccMode);
 };
 
 function frmCamOptionsGlobals() {
-    var MenuId = [];
     frmCamOptions = new kony.ui.Form2({
-        "id": "frmCamOptions",
-        "title": "Camera Options",
-        "needAppMenu": true,
+        "addWidgets": addWidgetsfrmCamOptions,
         "enabledForIdleTimeout": false,
-        "type": constants.FORM_TYPE_NATIVE,
+        "id": "frmCamOptions",
+        "needAppMenu": true,
         "skin": "sknFrmFormBgImg",
-        "addWidgets": addWidgetsfrmCamOptions
+        "title": "Camera Options"
     }, {
-        "padding": [0, 0, 0, 0],
         "displayOrientation": constants.FORM_DISPLAY_ORIENTATION_BOTH,
-        "paddingInPixel": false,
-        "layoutType": constants.CONTAINER_LAYOUT_BOX
+        "layoutType": constants.CONTAINER_LAYOUT_BOX,
+        "padding": [0, 0, 0, 0],
+        "paddingInPixel": false
     }, {
-        "retainScrollPosition": false,
-        "windowSoftInputMode": constants.FORM_ADJUST_RESIZE,
-        "titleBar": true,
-        "titleBarSkin": "sknTitleBarSampleApp",
         "footerOverlap": false,
         "headerOverlap": false,
         "inTransitionConfig": {
             "formAnimation": 0
         },
+        "menuPosition": constants.FORM_MENU_POSITION_AFTER_APPMENU,
         "outTransitionConfig": {
             "formAnimation": 0
         },
-        "menuPosition": constants.FORM_MENU_POSITION_AFTER_APPMENU
+        "retainScrollPosition": false,
+        "titleBar": true,
+        "titleBarSkin": "sknTitleBarSampleApp",
+        "windowSoftInputMode": constants.FORM_ADJUST_RESIZE
     });
 };

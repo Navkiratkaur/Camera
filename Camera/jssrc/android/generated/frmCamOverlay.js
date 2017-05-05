@@ -1,31 +1,27 @@
-//Form JS File
-function frmCamOverlay_cameraOverlay_onCapture_seq0(eventobject) {
-    onCaptureFrmOverLay.call(this, eventobject);
-};
-
 function addWidgetsfrmCamOverlay() {
     var cameraOverlay = new kony.ui.Camera({
+        "compressionLevel": 0,
+        "focusSkin": "sknCameraFocus",
         "id": "cameraOverlay",
         "isVisible": true,
-        "text": "Camera",
-        "skin": "sknCameraNormal",
-        "focusSkin": "sknCameraFocus",
-        "onCapture": frmCamOverlay_cameraOverlay_onCapture_seq0,
+        "onCapture": p2kwiet1296439488856_cameraOverlay_onCapture_seq0,
         "scaleFactor": 80,
-        "compressionLevel": 0
+        "skin": "sknCameraNormal",
+        "text": "Camera"
     }, {
-        "widgetAlignment": constants.WIDGET_ALIGN_CENTER,
-        "margin": [4, 5, 4, 2],
-        "padding": [1, 4, 1, 4],
-        "vExpand": false,
-        "hExpand": true,
+        "containerWeight": 100,
         "contentAlignment": constants.CONTENT_ALIGN_CENTER,
+        "hExpand": true,
+        "margin": [4, 5, 4, 2],
         "marginInPixel": false,
+        "padding": [1, 4, 1, 4],
         "paddingInPixel": false,
-        "containerWeight": 8
+        "vExpand": false,
+        "widgetAlignment": constants.WIDGET_ALIGN_CENTER
     }, {
         "accessMode": constants.CAMERA_IMAGE_ACCESS_MODE_PUBLIC,
         "enableOverlay": true,
+        "enablePhotoCropFeature": false,
         "overlayConfig": {
             "overlayForm": frmCamOverlaid,
             "tapAnywhere": false
@@ -33,53 +29,47 @@ function addWidgetsfrmCamOverlay() {
     });
     var imgCapturedOverlay = new kony.ui.Image2({
         "id": "imgCapturedOverlay",
-        "isVisible": true,
-        "src": null,
-        "imageWhenFailed": null,
-        "imageWhileDownloading": null
+        "isVisible": true
     }, {
-        "widgetAlignment": constants.WIDGET_ALIGN_CENTER,
-        "margin": [4, 1, 4, 1],
-        "padding": [0, 0, 0, 0],
+        "containerWeight": 100,
         "imageScaleMode": constants.IMAGE_SCALE_MODE_FIT_TO_DIMENSIONS,
-        "referenceWidth": 90,
-        "referenceHeight": 120,
+        "margin": [4, 1, 4, 1],
         "marginInPixel": false,
+        "padding": [0, 0, 0, 0],
         "paddingInPixel": false,
-        "containerWeight": 11
+        "referenceHeight": 120,
+        "referenceWidth": 90,
+        "widgetAlignment": constants.WIDGET_ALIGN_CENTER
     }, {});
-    frmCamOverlay.add(
-    cameraOverlay, imgCapturedOverlay);
+    frmCamOverlay.add(cameraOverlay, imgCapturedOverlay);
 };
 
 function frmCamOverlayGlobals() {
-    var MenuId = [];
     frmCamOverlay = new kony.ui.Form2({
-        "id": "frmCamOverlay",
-        "title": "Camera overlay",
-        "needAppMenu": true,
+        "addWidgets": addWidgetsfrmCamOverlay,
         "enabledForIdleTimeout": false,
-        "type": constants.FORM_TYPE_NATIVE,
+        "id": "frmCamOverlay",
+        "needAppMenu": true,
         "skin": "sknFrmFormBgImg",
-        "addWidgets": addWidgetsfrmCamOverlay
+        "title": "Camera overlay"
     }, {
-        "padding": [0, 0, 0, 0],
         "displayOrientation": constants.FORM_DISPLAY_ORIENTATION_BOTH,
-        "paddingInPixel": false,
-        "layoutType": constants.CONTAINER_LAYOUT_BOX
+        "layoutType": constants.CONTAINER_LAYOUT_BOX,
+        "padding": [0, 0, 0, 0],
+        "paddingInPixel": false
     }, {
-        "retainScrollPosition": false,
-        "windowSoftInputMode": constants.FORM_ADJUST_RESIZE,
-        "titleBar": true,
-        "titleBarSkin": "sknTitleBarSampleApp",
         "footerOverlap": false,
         "headerOverlap": false,
         "inTransitionConfig": {
             "formAnimation": 0
         },
+        "menuPosition": constants.FORM_MENU_POSITION_AFTER_APPMENU,
         "outTransitionConfig": {
             "formAnimation": 0
         },
-        "menuPosition": constants.FORM_MENU_POSITION_AFTER_APPMENU
+        "retainScrollPosition": false,
+        "titleBar": true,
+        "titleBarSkin": "sknTitleBarSampleApp",
+        "windowSoftInputMode": constants.FORM_ADJUST_RESIZE
     });
 };

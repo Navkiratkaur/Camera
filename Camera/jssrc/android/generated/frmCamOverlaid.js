@@ -1,72 +1,63 @@
-//Form JS File
 function addWidgetsfrmCamOverlaid() {
-    var imgOverlay = new kony.ui.Image2({
-        "id": "imgOverlay",
-        "isVisible": true,
-        "src": "header.png",
-        "imageWhenFailed": null,
-        "imageWhileDownloading": null
-    }, {
-        "widgetAlignment": constants.WIDGET_ALIGN_CENTER,
-        "margin": [0, 0, 0, 0],
-        "padding": [0, 0, 0, 0],
-        "imageScaleMode": constants.IMAGE_SCALE_MODE_MAINTAIN_ASPECT_RATIO,
-        "referenceWidth": null,
-        "referenceHeight": null,
-        "marginInPixel": false,
-        "paddingInPixel": false,
-        "containerWeight": 100
-    }, {});
     var hbox103976675071738 = new kony.ui.Box({
         "id": "hbox103976675071738",
         "isVisible": true,
-        "skin": "sknhbxWhiteSampleApp",
+        "orientation": constants.BOX_LAYOUT_HORIZONTAL,
         "position": constants.BOX_POSITION_AS_NORMAL,
-        "orientation": constants.BOX_LAYOUT_HORIZONTAL
+        "skin": "sknhbxWhiteSampleApp"
     }, {
-        "containerWeight": 11,
-        "percent": true,
-        "widgetAlignment": constants.WIDGET_ALIGN_TOP_LEFT,
+        "containerWeight": 100,
+        "layoutAlignment": constants.BOX_LAYOUT_ALIGN_FROM_LEFT,
+        "layoutType": constants.CONTAINER_LAYOUT_BOX,
         "margin": [0, 0, 0, 0],
-        "padding": [0, 0, 0, 0],
-        "vExpand": false,
         "marginInPixel": false,
+        "padding": [0, 0, 0, 0],
         "paddingInPixel": false,
-        "layoutType": constants.CONTAINER_LAYOUT_BOX
+        "percent": true,
+        "vExpand": false,
+        "widgetAlignment": constants.WIDGET_ALIGN_TOP_LEFT
     }, {});
-    hbox103976675071738.add(
-    imgOverlay);
-    frmCamOverlaid.add(
-    hbox103976675071738);
+    var imgOverlay = new kony.ui.Image2({
+        "id": "imgOverlay",
+        "isVisible": true,
+        "src": "header.png"
+    }, {
+        "containerWeight": 100,
+        "imageScaleMode": constants.IMAGE_SCALE_MODE_MAINTAIN_ASPECT_RATIO,
+        "margin": [0, 0, 0, 0],
+        "marginInPixel": false,
+        "padding": [0, 0, 0, 0],
+        "paddingInPixel": false,
+        "widgetAlignment": constants.WIDGET_ALIGN_CENTER
+    }, {});
+    hbox103976675071738.add(imgOverlay);
+    frmCamOverlaid.add(hbox103976675071738);
 };
 
 function frmCamOverlaidGlobals() {
-    var MenuId = [];
     frmCamOverlaid = new kony.ui.Form2({
-        "id": "frmCamOverlaid",
-        "title": null,
-        "needAppMenu": true,
+        "addWidgets": addWidgetsfrmCamOverlaid,
         "enabledForIdleTimeout": false,
-        "type": constants.FORM_TYPE_NATIVE,
-        "skin": "sknTrans",
-        "addWidgets": addWidgetsfrmCamOverlaid
+        "id": "frmCamOverlaid",
+        "needAppMenu": true,
+        "skin": "sknTrans"
     }, {
-        "padding": [0, 0, 0, 0],
         "displayOrientation": constants.FORM_DISPLAY_ORIENTATION_BOTH,
-        "paddingInPixel": false,
-        "layoutType": constants.CONTAINER_LAYOUT_BOX
+        "layoutType": constants.CONTAINER_LAYOUT_BOX,
+        "padding": [0, 0, 0, 0],
+        "paddingInPixel": false
     }, {
-        "retainScrollPosition": false,
-        "windowSoftInputMode": constants.FORM_ADJUST_RESIZE,
-        "titleBar": false,
         "footerOverlap": false,
         "headerOverlap": false,
         "inTransitionConfig": {
             "formAnimation": 0
         },
+        "menuPosition": constants.FORM_MENU_POSITION_AFTER_APPMENU,
         "outTransitionConfig": {
             "formAnimation": 0
         },
-        "menuPosition": constants.FORM_MENU_POSITION_AFTER_APPMENU
+        "retainScrollPosition": false,
+        "titleBar": false,
+        "windowSoftInputMode": constants.FORM_ADJUST_RESIZE
     });
 };

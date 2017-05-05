@@ -47,8 +47,9 @@ function onCapturePublicMode(cameraObject) {
 function onCapturePrivateMode(cameraObject) {
     kony.application.showLoadingScreen("loadingscreen", "Loading...", constants.LOADING_SCREEN_POSITION_FULL_SCREEN, true, true, null);
     frmCamAccessMode.img2AccessMode.rawBytes = cameraObject.rawBytes;
-    frmCamAccessMode.lblFrmAccessMode.text = "Second image from left is the captured image in private mode. You can not see the image in image Gallery of the camera .To observe this ,Hide the application and open camera and go to image gallery."
+    frmCamAccessMode.lblFrmAccessMode.text = "Second image from left is the captured image in private mode. You can not see the image in image Gallery of the camera .To observe this ,Hide the application and open camera and go to image gallery.";
     kony.application.dismissLoadingScreen();
+    frmCamAccessMode.show();
 }
 /*
  ****************************************************************
@@ -62,6 +63,7 @@ function onCaptureInMemoryMode(cameraObject) {
     frmCamAccessMode.img3AccessMode.rawBytes = cameraObject.rawBytes;
     frmCamAccessMode.lblFrmAccessMode.text = "Third image from left is the captured image in inMemory mode. You can not see the image in image Gallery of the camera .To observe this ,Hide the application and open camera and go to image gallery."
     kony.application.dismissLoadingScreen();
+    frmCamAccessMode.show();
 }
 /*
  ****************************************************************

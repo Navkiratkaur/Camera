@@ -1,0 +1,21 @@
+{
+    "p2kwiet1296439488901_btnOrientation_onClick_seq0": {
+        "id": "p2kwiet1296439488901_btnOrientation_onClick_seq0",
+        "type": "ACTION_SEQUENCE",
+        "params": [{
+            "name": "eventobject",
+            "value": "eventobject"
+        }],
+        "language": "js",
+        "actions": [{
+            "id": "navigation_onClick_7527912964394887624",
+            "type": "NAVIGATE_TO_FORM",
+            "formId": "frmCamOrientation",
+            "formKUID": "p2kwiet1296439488910",
+            "mappings": {},
+            "mappingsOrder": [],
+            "parentId": "",
+            "enableMappingEditor": true
+        }]
+    }
+}

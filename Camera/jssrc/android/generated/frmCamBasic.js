@@ -1,31 +1,45 @@
-//Form JS File
-function frmCamBasic_cameraBasic_onCapture_seq0(eventobject) {
-    onCapture.call(this, eventobject);
-};
-
 function addWidgetsfrmCamBasic() {
+    var hbxHeaderWindows = new kony.ui.Box({
+        "id": "hbxHeaderWindows",
+        "isVisible": true,
+        "orientation": constants.BOX_LAYOUT_HORIZONTAL,
+        "position": constants.BOX_POSITION_AS_NORMAL
+    }, {
+        "containerWeight": 100,
+        "layoutAlignment": constants.BOX_LAYOUT_ALIGN_FROM_LEFT,
+        "layoutType": constants.CONTAINER_LAYOUT_BOX,
+        "margin": [0, 0, 0, 0],
+        "marginInPixel": false,
+        "padding": [0, 0, 0, 0],
+        "paddingInPixel": false,
+        "percent": true,
+        "vExpand": false,
+        "widgetAlignment": constants.WIDGET_ALIGN_TOP_LEFT
+    }, {});
+    hbxHeaderWindows.add();
     var cameraBasic = new kony.ui.Camera({
+        "compressionLevel": 0,
+        "focusSkin": "sknCameraFocus",
         "id": "cameraBasic",
         "isVisible": true,
-        "text": "Camera",
-        "skin": "sknCameraNormal",
-        "focusSkin": "sknCameraFocus",
-        "onCapture": frmCamBasic_cameraBasic_onCapture_seq0,
+        "onCapture": p2kwiet1296439488828_cameraBasic_onCapture_seq0,
         "scaleFactor": 80,
-        "compressionLevel": 0
+        "skin": "sknCameraNormal",
+        "text": "Camera"
     }, {
-        "widgetAlignment": constants.WIDGET_ALIGN_CENTER,
-        "margin": [4, 5, 4, 2],
-        "padding": [1, 4, 1, 4],
-        "vExpand": false,
-        "hExpand": true,
+        "containerWeight": 100,
         "contentAlignment": constants.CONTENT_ALIGN_CENTER,
+        "hExpand": true,
+        "margin": [4, 5, 4, 2],
         "marginInPixel": false,
+        "padding": [1, 4, 1, 4],
         "paddingInPixel": false,
-        "containerWeight": 8
+        "vExpand": false,
+        "widgetAlignment": constants.WIDGET_ALIGN_CENTER
     }, {
         "accessMode": constants.CAMERA_IMAGE_ACCESS_MODE_PUBLIC,
         "enableOverlay": false,
+        "enablePhotoCropFeature": false,
         "overlayConfig": {
             "tapAnywhere": false
         }
@@ -33,101 +47,96 @@ function addWidgetsfrmCamBasic() {
     var lblRaw = new kony.ui.Label({
         "id": "lblRaw",
         "isVisible": true,
-        "text": "Image in RawBytes :",
-        "skin": "sknlblNormal"
+        "skin": "sknlblNormal",
+        "text": "Image in RawBytes :"
     }, {
-        "widgetAlignment": constants.WIDGET_ALIGN_CENTER,
-        "vExpand": false,
+        "containerWeight": 100,
+        "contentAlignment": constants.CONTENT_ALIGN_MIDDLE_LEFT,
         "hExpand": true,
         "margin": [4, 2, 4, 1],
-        "padding": [6, 15, 6, 15],
-        "contentAlignment": constants.CONTENT_ALIGN_MIDDLE_LEFT,
         "marginInPixel": false,
+        "padding": [6, 15, 6, 15],
         "paddingInPixel": true,
-        "containerWeight": 6
-    }, {});
+        "vExpand": false,
+        "widgetAlignment": constants.WIDGET_ALIGN_CENTER
+    }, {
+        "textCopyable": false
+    });
     var imgRaw = new kony.ui.Image2({
         "id": "imgRaw",
-        "isVisible": true,
-        "src": null,
-        "imageWhenFailed": null,
-        "imageWhileDownloading": null
+        "isVisible": true
     }, {
-        "widgetAlignment": constants.WIDGET_ALIGN_CENTER,
-        "margin": [4, 1, 4, 2],
-        "padding": [0, 0, 0, 0],
+        "containerWeight": 100,
         "imageScaleMode": constants.IMAGE_SCALE_MODE_FIT_TO_DIMENSIONS,
-        "referenceWidth": 90,
-        "referenceHeight": 120,
+        "margin": [4, 1, 4, 2],
         "marginInPixel": false,
+        "padding": [0, 0, 0, 0],
         "paddingInPixel": false,
-        "containerWeight": 6
+        "referenceHeight": 120,
+        "referenceWidth": 90,
+        "widgetAlignment": constants.WIDGET_ALIGN_CENTER
     }, {});
     var lblBase64 = new kony.ui.Label({
         "id": "lblBase64",
         "isVisible": true,
-        "text": "Image in Base64 :",
-        "skin": "sknlblNormal"
+        "skin": "sknlblNormal",
+        "text": "Image in Base64 :"
     }, {
-        "widgetAlignment": constants.WIDGET_ALIGN_CENTER,
-        "vExpand": false,
+        "containerWeight": 100,
+        "contentAlignment": constants.CONTENT_ALIGN_MIDDLE_LEFT,
         "hExpand": true,
         "margin": [4, 2, 4, 1],
-        "padding": [6, 15, 6, 15],
-        "contentAlignment": constants.CONTENT_ALIGN_MIDDLE_LEFT,
         "marginInPixel": false,
+        "padding": [6, 15, 6, 15],
         "paddingInPixel": true,
-        "containerWeight": 6
-    }, {});
+        "vExpand": false,
+        "widgetAlignment": constants.WIDGET_ALIGN_CENTER
+    }, {
+        "textCopyable": false
+    });
     var imgBase64 = new kony.ui.Image2({
         "id": "imgBase64",
-        "isVisible": true,
-        "src": null,
-        "imageWhenFailed": null,
-        "imageWhileDownloading": null
+        "isVisible": true
     }, {
-        "widgetAlignment": constants.WIDGET_ALIGN_CENTER,
-        "margin": [4, 1, 4, 2],
-        "padding": [0, 0, 0, 0],
+        "containerWeight": 100,
         "imageScaleMode": constants.IMAGE_SCALE_MODE_FIT_TO_DIMENSIONS,
-        "referenceWidth": 90,
-        "referenceHeight": 120,
+        "margin": [4, 1, 4, 2],
         "marginInPixel": false,
+        "padding": [0, 0, 0, 0],
         "paddingInPixel": false,
-        "containerWeight": 6
+        "referenceHeight": 120,
+        "referenceWidth": 90,
+        "widgetAlignment": constants.WIDGET_ALIGN_CENTER
     }, {});
-    frmCamBasic.add(
-    cameraBasic, lblRaw, imgRaw, lblBase64, imgBase64);
+    frmCamBasic.add(hbxHeaderWindows, cameraBasic, lblRaw, imgRaw, lblBase64, imgBase64);
 };
 
 function frmCamBasicGlobals() {
-    var MenuId = [];
     frmCamBasic = new kony.ui.Form2({
-        "id": "frmCamBasic",
-        "title": "Camera basic",
-        "needAppMenu": true,
+        "addWidgets": addWidgetsfrmCamBasic,
         "enabledForIdleTimeout": false,
-        "type": constants.FORM_TYPE_NATIVE,
+        "id": "frmCamBasic",
+        "needAppMenu": true,
         "skin": "sknFrmFormBgImg",
-        "addWidgets": addWidgetsfrmCamBasic
+        "title": "Camera basic"
     }, {
-        "padding": [0, 0, 0, 0],
         "displayOrientation": constants.FORM_DISPLAY_ORIENTATION_BOTH,
-        "paddingInPixel": false,
-        "layoutType": constants.CONTAINER_LAYOUT_BOX
+        "layoutType": constants.CONTAINER_LAYOUT_BOX,
+        "padding": [0, 0, 0, 0],
+        "paddingInPixel": false
     }, {
-        "retainScrollPosition": false,
-        "windowSoftInputMode": constants.FORM_ADJUST_RESIZE,
-        "titleBar": true,
-        "titleBarSkin": "sknTitleBarSampleApp",
         "footerOverlap": false,
         "headerOverlap": false,
         "inTransitionConfig": {
             "formAnimation": 0
         },
+        "menuPosition": constants.FORM_MENU_POSITION_AFTER_APPMENU,
         "outTransitionConfig": {
             "formAnimation": 0
         },
-        "menuPosition": constants.FORM_MENU_POSITION_AFTER_APPMENU
+        "retainScrollPosition": false,
+        "titleBar": true,
+        "titleBarSkin": "sknTitleBarSampleApp",
+        "windowSoftInputMode": constants.FORM_ADJUST_RESIZE
     });
 };
